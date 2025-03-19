@@ -1,0 +1,45 @@
+[package]
+name = "rust-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Web server framework
+axum = "0.8.1"
+tower = "0.5.2"
+tower-http = { version = "0.6.2", features = ["cors", "trace"] }
+
+# Async runtime
+tokio = { version = "1.33.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0.192", features = ["derive"] }
+serde_json = "1.0.108"
+
+# Blockchain integration - Solana
+solana-sdk = "2.2.1"
+solana-client = "2.2.3"
+solana-transaction-status = "2.2.3"
+anchor-client = "0.31.0"
+
+# Blockchain integration - Ethereum
+ethers = { version = "2.0.11", features = ["ws", "rustls"] }
+
+# Error handling
+thiserror = "2.0.12"
+anyhow = "1.0.75"
+
+# Logging and tracing`
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+
+# Configuration
+config = "0.15.11"
+dotenv = "0.15.0"
+
+# Utilities
+chrono = { version = "0.4.31", features = ["serde"] }
+rust_decimal = { version = "1.32.0", features = ["serde"] }
+futures = "0.3.29"
+tokio-tungstenite = { version = "0.26.2", features = ["rustls-tls-webpki-roots"] }
+uuid = { version = "1.5.0", features = ["v4", "serde"] }
